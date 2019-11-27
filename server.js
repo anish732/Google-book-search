@@ -17,7 +17,7 @@ app.use(routes);
 
 mongoose.Promise = Promise;
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost:27017/google-books-db',
+  process.env.MONGODB_URI || "mongodb://shital:shital732@ds239940.mlab.com:39940/heroku_knfvvbkj",
   { useNewUrlParser: true }
 );
 

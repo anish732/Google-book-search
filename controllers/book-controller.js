@@ -1,6 +1,7 @@
-const { Book } = require('../models');
+const { Book } = require("../models");
 
 const getSavedBooks = (req, res) => {
+  console.log("about to get book");
   Book.find({})
     .then(dbBookData => res.json(dbBookData))
     .catch(err => {
@@ -10,8 +11,12 @@ const getSavedBooks = (req, res) => {
 };
 
 const saveBook = (req, res) => {
+  console.log("save book");
   Book.create(req.body)
-    .then(dbBookData => res.json(dbBookData))
+    .then(dbBookData => {
+      console.log("book created", dbBookData);
+      res.json(dbBookData);
+    })
     .catch(err => {
       console.log(err);
       res.json(err);
